@@ -33,6 +33,15 @@ return require('packer').startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	}
+	use {
+		'hrsh7th/nvim-cmp',
+		'hrsh7th/cmp-nvim-lsp',
+		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-path',
+		'hrsh7th/cmp-cmdline',
+		'dcampos/nvim-snippy',
+		'dcampos/cmp-snippy'
+	}
 	vim.cmd([[
 		augroup packer_user_config
 			autocmd!
