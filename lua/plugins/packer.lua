@@ -12,26 +12,34 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'cocopon/iceberg.vim'
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
-  vim.cmd([[
-    augroup packer_user_config
-      autocmd!
-      autocmd BufWritePost packer.lua source <afile> | PackerSync 
-    augroup end
-  ]])
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+	use 'wbthomason/packer.nvim'
+	use 'cocopon/iceberg.vim'
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
+	use {
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+		  'nvim-tree/nvim-web-devicons', -- optional, for file icons
+		},
+		tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
+	use ("christoomey/vim-tmux-navigator")
+	use ("nvim-treesitter/nvim-treesitter")
+	use ("p00f/nvim-ts-rainbow")
+	use {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	}
+	vim.cmd([[
+		augroup packer_user_config
+			autocmd!
+			autocmd BufWritePost packer.lua source <afile> | PackerSync 
+		augroup end
+	]])
+	if packer_bootstrap then
+		require('packer').sync()
+	end
 end)
