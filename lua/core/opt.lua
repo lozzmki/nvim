@@ -15,6 +15,7 @@ opt.splitright = true
 opt.splitbelow = true
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
+opt.clipboard = 'unnamedplus'
 opt.termguicolors = true
 vim.cmd[[colorscheme iceberg]]
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {

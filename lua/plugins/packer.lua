@@ -17,31 +17,19 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
-	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-		  'nvim-tree/nvim-web-devicons', -- optional, for file icons
-		},
-		tag = 'nightly' -- optional, updated every week. (see issue #1193)
-	}
+
 	use ("christoomey/vim-tmux-navigator")
-	use ("nvim-treesitter/nvim-treesitter")
-	use ("p00f/nvim-ts-rainbow")
-	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	}
-	use {
-		'hrsh7th/nvim-cmp',
-		'hrsh7th/cmp-nvim-lsp',
-		'hrsh7th/cmp-buffer',
-		'hrsh7th/cmp-path',
-		'hrsh7th/cmp-cmdline',
-		'dcampos/nvim-snippy',
-		'dcampos/cmp-snippy'
-	}
+--	use ("nvim-treesitter/nvim-treesitter")
+--	use ("p00f/nvim-ts-rainbow")
+----use {
+----	"williamboman/mason.nvim",
+----	"williamboman/mason-lspconfig.nvim",
+----	"neovim/nvim-lspconfig",
+----}
+
 	use ('neoclide/coc.nvim')
+	use ('dyng/ctrlsf.vim')
+	use ('ctrlpvim/ctrlp.vim')
 
 	vim.cmd([[
 		augroup packer_user_config
