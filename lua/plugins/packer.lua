@@ -10,7 +10,6 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
-
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'cocopon/iceberg.vim'
@@ -42,10 +41,12 @@ return require('packer').startup(function(use)
 		'dcampos/nvim-snippy',
 		'dcampos/cmp-snippy'
 	}
+	use ('neoclide/coc.nvim')
+
 	vim.cmd([[
 		augroup packer_user_config
 			autocmd!
-			autocmd BufWritePost packer.lua source <afile> | PackerSync 
+			autocmd BufWritePost packer.lua source <afile> | PackerSync
 		augroup end
 	]])
 	if packer_bootstrap then

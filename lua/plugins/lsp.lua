@@ -1,5 +1,4 @@
-require("mason").setup({
-    ui = {
+require("mason").setup({ ui = {
         icons = {
             package_installed = "✓",
             package_pending = "➜",
@@ -31,10 +30,8 @@ require("mason-lspconfig").setup({
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp = require("lspconfig")
 lsp.sumneko_lua.setup {
-	root_dir = function (fn)
-		local root_pattern = lsp.util.root_pattern('.git', '.svn')(fn)
-		if fn == vim.loop.os_homedir() then return nil end
-		return root_pattern or fn
-	end
-}
 
+}
+lsp["vls"].setup {
+
+}
