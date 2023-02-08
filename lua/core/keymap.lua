@@ -11,9 +11,8 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-]]
 
--- nvim-tree
+set("n", "<C-F>f", "<Plug>CtrlSFPrompt", default_opts)
 set("v", "<C-F>f", "<Plug>CtrlSFVwordPath", default_opts)
 set("v", "<C-F>F", "<Plug>CtrlSFVwordExec", default_opts)
 set("n", "<C-F>n", "<Plug>CtrlSFCwordPath", default_opts)
@@ -22,3 +21,5 @@ set("n", "<C-F>o", ":CtrlSFOpen<CR>", default_opts)
 set("n", "<C-F>t", ":CtrlSFToggle<CR>", default_opts)
 set("i", "<C-F>t", "<<Esc>:CtrlSFToggle<CR>", default_opts)
 
+]]
+set("", "<C-F>f", ":Ag", default_opts)

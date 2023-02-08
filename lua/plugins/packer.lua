@@ -13,6 +13,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'cocopon/iceberg.vim'
+	use { "ellisonleao/gruvbox.nvim" }
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -29,7 +30,9 @@ return require('packer').startup(function(use)
 
 	use ('neoclide/coc.nvim')
 	use ('dyng/ctrlsf.vim')
-	use ('ctrlpvim/ctrlp.vim')
+--	use ('ctrlpvim/ctrlp.vim')
+	use { 'junegunn/fzf', run = ":call fzf#install()" }
+	use {'junegunn/fzf.vim'}
 
 	vim.cmd([[
 		augroup packer_user_config

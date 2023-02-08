@@ -7,4 +7,4 @@ require('plugins.lualine')
 --require('plugins.lsp')
 --require('plugins.cmp')
 require('plugins.coc')
-
+require('plugins.c_f_c_p')
