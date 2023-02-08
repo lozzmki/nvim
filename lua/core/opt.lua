@@ -22,4 +22,8 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = { "*" },
 	command = [[%s/\s\+$//e]],
 })
-
+-- indent
+vim.cmd [[
+	autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+	autocmd FileType vue setlocal shiftwidth=2 tabstop=2
+]]
