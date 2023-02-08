@@ -23,3 +23,5 @@ set("i", "<C-F>t", "<<Esc>:CtrlSFToggle<CR>", default_opts)
 
 ]]
 set("", "<C-F>f", ":Ag", default_opts)
+set("", "<A-j>", ":m +1<cr>", default_opts)
+set("", "<A-k>", ":m -2<cr>", default_opts)
